@@ -1,0 +1,112 @@
+/* ===========================
+   Veterinaria Huellitas · estilos propios
+   (se cargan DESPUÉS de Bootstrap para poder personalizarlo)
+   =========================== */
+
+:root {
+  --verde: #2a9d8f;
+  --verde-oscuro: #1f7a70;
+  --naranja: #f4a261;
+  --crema: #fdf6ec;
+  --texto: #264653;
+}
+
+body {
+  background: linear-gradient(160deg, var(--crema) 0%, #e3f4f1 100%);
+  min-height: 100vh;
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* Encabezado */
+.encabezado {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.encabezado h1 {
+  font-weight: 800;
+  color: var(--verde-oscuro);
+}
+
+.encabezado h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #6b7f86;
+}
+
+/* Tarjeta del formulario */
+.tarjeta {
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  box-shadow: 0 10px 30px rgba(38, 70, 83, 0.12);
+  border-top: 6px solid var(--naranja);
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.75rem;
+  border: 2px solid #e5ecec;
+  padding: 0.6rem 0.9rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--verde);
+  box-shadow: 0 0 0 0.2rem rgba(42, 157, 143, 0.2);
+}
+
+/* Botón (sobrescribe el azul de Bootstrap) */
+.btn-primary {
+  background-color: var(--verde);
+  border-color: var(--verde);
+  border-radius: 0.75rem;
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  width: 100%;
+  transition: transform 0.15s, background-color 0.15s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--verde-oscuro);
+  border-color: var(--verde-oscuro);
+  transform: translateY(-2px);
+}
+
+/* Lista de mascotas */
+.titulo-lista {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
+
+#lista {
+  gap: 0.6rem;
+}
+
+#lista .list-group-item {
+  border: none;
+  border-left: 6px solid var(--naranja);
+  border-radius: 0.75rem !important;
+  margin-bottom: 0.6rem;
+  padding: 0.9rem 1.1rem;
+  background: #fffaf3;
+  box-shadow: 0 2px 8px rgba(38, 70, 83, 0.08);
+  animation: aparecer 0.3s ease;
+}
+
+#lista .list-group-item::before {
+  content: "🐾 ";
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
